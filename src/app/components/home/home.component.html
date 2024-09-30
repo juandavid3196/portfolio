@@ -1,0 +1,460 @@
+<div class="container">
+   <app-navbar></app-navbar>
+   <img src="../../../assets/img/hambur-menu.svg" class="hambur-icon {{open ? 'close-menu' : ''}}" (click)="toggleMenu()"  alt="">
+   <div class="hamburguer-menu {{open ? 'open-menu' : ''}}">
+        <img src="../../../assets/img/close-icon.svg" class="close-icon" (click)="toggleMenu()"  alt="">
+        <ul>
+            <li (click)="goToSection('home')">Home</li>
+            <li (click)="goToSection('about')">About</li>
+            <li (click)="goToSection('resume')">Resume</li>
+            <li (click)="goToSection('skill')">Skills</li>
+            <li (click)="goToSection('portfolio')">Portfolio</li>
+            <li (click)="goToSection('services')">Services</li>
+            <li (click)="goToSection('contact')">Contact</li>
+        </ul>
+   </div>
+    <div class="home-section" id="home">
+        <div class="name-box">
+            <p class="title">Juan David </p>
+            <p class="tick-letter">Rios Rodriguez</p>
+            <p class="sub-title">Frontend Developer  &lt;/&gt; </p>
+        </div>
+        <div class="buttons-box">
+            <button class="home-button" (click)="goToSection('resume',true)">Resume</button>
+            <button class="home-button  btn-portfolio" (click)="goToSection('portfolio',true)">Portfolio</button>
+        </div>
+    </div>
+    <div class="about-section" id="about">
+        <div class="section-title">
+            <span class="title">ABOUT</span>
+        </div>
+        <p class="section-text">
+            <span class="greet-text">Hello</span>, I’m a passionate System Engineer specialized in Front-end development. I love designing, styling, and programming user interfaces. 
+            With 2 years of experience, I’ve worked both with professional teams and as a freelancer. You can explore my background and skills on this page, 
+            and if you’d like to get in touch, feel free to click on any of the icons for my social media.
+        </p>
+    </div>
+    <div class="resume-section" id="resume">
+        <div class="main-title">
+            <span class="title">RESUME</span>
+        </div>
+        <div class="resume-container">
+            <div class="left">
+                <div class="section-box">
+                    <div class="box-title">
+                        EDUCATION
+                    </div>
+                    <div class="box-content">
+                        <div class="career-box">
+                            <span class="career-name">SYSTEM ENGINEER</span>
+                            <span class="int-name">Universidad de Antioquia</span>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <div class="career-box">
+                            <span class="career-name">SELF LEARNING</span>
+                            <span class="int-name">Platzi, Udemy, Youtube</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-box">
+                    <div class="box-title">
+                        LENGUAGES
+                    </div>
+                    <div class="box-content">
+                        <div class="tech-box">
+                            <span class="t-name-lenguage">ENGLISH</span>
+                            <span class="t-name">B2 </span>
+                            <app-progress-bar right="40px"></app-progress-bar>
+                        </div>
+                        <div class="tech-box">
+                            <span class="t-name-lenguage">SPANISH</span>
+                            <span class="t-name">Native</span>
+                            <span class="infinite-icon">
+                                <img  class="t-icon"  src="../../../assets/img/infinite-icon.svg" alt="">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="section-box">
+                    <div class="box-title">
+                        EXPERIENCE
+                    </div>
+                    <div class="box-content">
+                        <div class="info-box">
+                            <div class="circle-container">
+                                <span class="level-circle">2024<br>2023</span>
+                            </div>
+                            <div class="right-info-box">
+                                <span class="company-name">UNIVERSIDAD DE ANTIOQUIA</span>
+                                <span class="company-role">Front-end Developer</span>
+                            </div>
+                        </div>
+                        <span class="h-line"></span>
+                        <div class="info-box">
+                            <div class="circle-container">
+                                <span class="level-circle">2022<br>2021</span>
+                            </div>
+                            <div class="right-info-box">
+                                <span class="company-name">DOCTUS</span>
+                                <span class="company-role">Web Developer</span>
+                            </div>
+                        </div>
+                        <span class="h-line"></span>
+                        <div class="info-box">
+                            <div class="circle-container">
+                                <span class="level-circle">2018</span>
+                            </div>
+                            <div class="right-info-box">
+                                <span class="company-name">DISEÑAMOS WEB</span>
+                                <span class="company-role">Wordpress Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="section-box">
+                    <div class="box-title">
+                        PERSONAL SKILLS
+                    </div>
+                    <div class="box-content">
+                        <ul>
+                            <li>Creativity</li>
+                            <li>Discipline</li>
+                            <li>Communication</li>
+                            <li>Decision making</li>
+                            <li>Problem solving </li>
+                            <li>Time Management</li>
+                            <li>Commitment</li>
+                            <li>Team Work</li>
+                            <li>Organization</li>
+                            <li>Self learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-section" id="skill">
+        <div class="main-title">
+            <span class="title">SKILL SET</span>
+        </div>
+        <div class="cards-section">
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/react-icon.svg" alt="">
+                    <span class="title">REACT</span>
+                </div>
+                <span class="middle-line"></span>
+                <div class="card-list">
+                    <ul>
+                        <li>Hooks (useState, useEffect, useContext, custom Hooks)</li>
+                        <li>State management (Redux)</li>
+                        <li>Component-Driven Architecture</li>
+                        <li>API integration</li>
+                        <li>React router</li>
+                        <li>Next js (Fundaments)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/angular-icon.svg" alt="">
+                    <span class="title">ANGULAR</span>
+                </div>
+                <span class="middle-line"></span>
+                <div class="card-list">  
+                    <ul>
+                        <li>Component-Based Architecture</li>
+                        <li>Services and Dependencies</li>
+                        <li>Reactive Forms</li>
+                        <li>Rjxs and Observables</li>
+                        <li>Lazy Loading and Optimization</li>
+                        <li>Input/Output</li>
+                        <li>Guards and Root protection</li>
+                        <li>Directives and Pipes</li>
+                        <li>HTTP Interceptors</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/javascript-icon.svg" alt="">
+                    <span class="title">JAVASCRIPT</span>
+                </div> 
+                <span class="middle-line"></span>
+                <div class="card-list">    
+                    <ul>
+                        <li>Asynchronous (Promises, Async/Await)</li>
+                        <li>Array methods</li>
+                        <li>DOM manipulation</li>
+                        <li>Order funtions (map,filter,reduce)</li>
+                        <li>Fetch Api, Storage management</li>
+                        <li>Try/Catch, Custom errors</li>
+                    </ul>   
+                </div>  
+            </div>
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/typescript-icon.svg" alt="">
+                    <span class="title">TYPESCRIPT</span>
+                </div>
+                <span class="middle-line"></span>
+                <div class="card-list"> 
+                    <ul>
+                        <li>Strict typing</li>
+                        <li>Generics</li>
+                        <li>Union & Intersection types</li>
+                        <li>Interfaces and Enums</li>
+                    </ul>
+                </div>
+            </div>
+           
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/html-icon.svg" alt="">
+                    <span class="title">HTML</span>
+                </div>
+                <span class="middle-line"></span>
+                <div class="card-list"> 
+                    <ul>
+                        <li>Semantic</li>
+                        <li>Forms and Input elements</li>
+                        <li>Responsive design</li>
+                        <li>SEO best practices</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/css-icon.svg" alt="">
+                    <span class="title">CSS</span>
+                </div>
+                <span class="middle-line"></span>
+                <div class="card-list"> 
+                    <ul>
+                        <li>Selectors and Specificity</li>
+                        <li>Box Model</li>
+                        <li>Flexbox and Grid</li>
+                        <li>Responsive designs</li>
+                        <li>Animations and Transitions</li>
+                        <li>Styling Best Practices (BEM methodology, utility-first CSS)</li>
+                        <li>CSS Preprocessors (SASS)</li>
+                        <li>Frameworks (Tailwind and Bootstrap)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/git-icon.png" alt="">
+                    <span class="title">GIT</span>
+                </div>  
+                <span class="middle-line"></span>
+                <div class="card-list"> 
+                    <ul>
+                        <li>Branching Strategies (Git Flow)</li>
+                        <li>Conflict Resolution</li>
+                        <li>Team colaboration (Pull Request, Code Review) </li>
+                        <li>Versioning and Releases</li>
+                        <li>Github and Bitbucket</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-card">
+                <div class="card-top">
+                    <img src="../../../assets/img/code-icon.svg" alt="">
+                    <span class="title">KNOW HOW</span>
+                </div>  
+                <span class="middle-line"></span>
+                <div class="card-list"> 
+                    <ul>
+                        <li>Testing</li>
+                        <li>SCRUM</li>
+                        <li>Azure DevOps</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>Jira and Trello</li>
+                        <li>Microservices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div class="portfolio-section" id="portfolio">
+       <div class="port-title">
+            MY PROJECTS
+       </div>
+       <div class="projects-container">
+        <div class="project-box">
+            <div class="box-left">
+                <div class="project-category">
+                    WEB APPLICATION
+                </div>
+                <div class="project-title">
+                    Characterization platform for disabled people
+                </div>
+                <div class="project-description">
+                    This system profiles individuals with disabilities at the University of Antioquia. It features customizable surveys with various 
+                    question types and accessible interfaces for users with visual or hearing impairments. The goal is to collect data to improve decision-making 
+                    on educational programs, infrastructure, and the academic experience.
+                </div>
+                <span class="project-btn"><img src="../../../assets/img/right-narrow.svg" alt="">  <a href="/project-1">Read more</a> </span>
+            </div>
+            <div class="box-right" style="justify-content:center;">
+                <div class="img-container">
+                    <div class="bottom-frame"></div>
+                    <img src="../../../assets/gallery/project-one.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="project-box last-box">
+            <div class="box-right">
+                <div class="img-container">
+                    <div class="bottom-frame"></div>
+                    <img src="../../../assets/gallery/project-two.png" alt="">
+                </div>
+            </div>
+            <div class="box-left">
+                <div class="project-category">
+                    WEB APPLICATION
+                </div>
+                <div class="project-title">
+                    Events Manager for Pablo Tobon uribe Teather
+                </div>
+                <div class="project-description">
+                    The platform manages all activities for organizing theater events, including event creation and sub-event management. It integrates with 
+                    the Calendar API for scheduling, manages user roles and permissions, stores legal documents, and presents performance metrics through graphical reports.
+                </div>
+                <span class="project-btn"><img src="../../../assets/img/right-narrow.svg" alt="">  <a href="/project-2">Read more</a> </span>
+            </div>
+        </div>
+       </div>
+    </div>
+    <div class="services-section" id="services">
+        <div class="main-title">
+             WHAT CAN I DO?
+        </div>
+        <div class="services-container">
+            <div class="service-background">
+                <div class="service-box">
+                    <div class="srv-top">
+                        <div class="img-circle">
+                            <img src="../../../assets/img/web-icon.svg" alt="">
+                        </div>
+                        <div class="srv-sub-title">MODERM WEBSITES</div>
+                    </div>
+                    <div class="srv-bottom">
+                        I design and develop responsive, cutting-edge websites that deliver a seamless experience across all devices. Using HTML5, CSS3, and modern frameworks like Bootstrap or Tailwind CSS, 
+                        I ensure every site is not only visually appealing but also fast, efficient, and user-friendly.
+                    </div>
+                </div>
+            </div>
+            <div class="service-background">
+                <div class="service-box">
+                    <div class="srv-top">
+                        <div class="img-circle">
+                            <img src="../../../assets/img/app-icon.svg" alt="">
+                        </div>                        
+                        <div class="srv-sub-title">WEB APPLICATIONS</div>
+                    </div>
+                    <div class="srv-bottom">
+                        I create dynamic, interactive web applications using the latest JavaScript frameworks, including React and Angular. My focus is on delivering smooth, 
+                        engaging user experiences that make complex functionalities feel simple and intuitive.
+                    </div>
+                </div>
+            </div>
+            <div class="service-background">
+                <div class="service-box">
+                    <div class="srv-top">
+                        <div class="img-circle">
+                            <img src="../../../assets/img/design-icon.svg" alt="">
+                        </div>                        
+                        <div class="srv-sub-title">INTERFACE (UI) DESIGN</div>
+                    </div>
+                    <div class="srv-bottom">
+                        Crafting visually appealing, intuitive interfaces is my passion. I focus on clean layouts, harmonious color schemes, and typography that enhance usability, 
+                        ensuring every design is tailored for a seamless and enjoyable user journey.
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>    
+    <div class="contact-section" id="contact">
+        <div class="slight-layer">
+            <div class="main-title">
+                CONTACT
+           </div>
+           <div class="main-contact">
+            <div class="main-left">
+                <div class="message-box">
+                    Drop me a Message! <br>
+                    <span class="short-phrase">Let's connect and bring your ideas to life!</span>
+                </div>
+                <div class="info-box">
+                    <div class="data-box">
+                        <div class="icon-box">
+                            <img src="../../../assets/img/phone-icon.svg" alt="">
+                        </div>
+                        <div class="data-text">
+                            (+57) 3026635805
+                        </div>
+                    </div>
+                    <div class="data-box">
+                        <div class="icon-box">
+                            <img src="../../../assets/img/gmail-icon.svg" alt="">
+                        </div>
+                        <div class="data-text">
+                            juandavid3196&#64;gmail.com
+                        </div>
+                    </div>
+                    <div class="data-box">
+                        <div class="icon-box">
+                            <img src="../../../assets/img/location-icon.svg" alt="">
+                        </div>
+                        <div class="data-text">
+                             Medellin, Colombia 
+                             <img src="../../../assets/img/colombian-flag-icon.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-right">
+                <form action="">
+                    <input type="text" name="name" placeholder="Name">
+                    <input type="email" name="email" id="" placeholder="Email">
+                    <textarea name="message" id="" placeholder="Message"></textarea>
+                    <button class="btn-submit">Send</button>
+                </form>
+            </div>  
+           </div>
+           <div class="bottom-contact">
+                <span class="logo-box"></span>
+                <span class="terms-text">2024 - JDRR Developer - All rights reserved</span>
+                <span class="icons-section">
+                    <div class="icon-box">
+                        <a href="https://wa.me/573026635805">
+                            <img src="../../../assets/img/wtp-icon.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="icon-box">
+                        <a href="https://www.linkedin.com/in/juan-david-rios-rodriguez-93415b214">
+                            <img src="../../../assets/img/likendin-icon.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="icon-box">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=juandavid3196@gmail.com">
+                            <img src="../../../assets/img/gmail-icon.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="icon-box">
+                        <a href="https://github.com/juandavid3196">
+                            <img src="../../../assets/img/gitgub-icon.svg" alt="">
+                        </a>
+                    </div> 
+                </span>
+           </div>
+        </div>  
+    </div>
+</div>

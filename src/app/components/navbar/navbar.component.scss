@@ -1,0 +1,71 @@
+nav {
+    display: flex;
+    align-items: center;
+    padding: 20px  40px;
+    height: 80px;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    background-color: transparent;
+
+    .nav-left {
+        font-size: 16px;
+        ul {
+            font-weight: 450;
+            list-style: none;
+            display: flex;
+            gap: 45px;
+
+            li {
+                cursor: pointer;
+            }
+
+            li:hover {
+                color: #ff6767;
+                transform: scale(1.2);
+                transition: transform  0.5s ease;
+            }
+        }
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        .btn-contact{
+            border-style: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            width: 150px;
+            height: 35px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 15px;
+            background-color: #6f71ffb5;
+        }
+
+        .btn-contact:hover {
+            background-color: #6f71ffde;
+            transform: scale(1.2);
+            transition: transform  0.5s ease;
+        }
+    } 
+}
+
+@media (max-width: 740px) {
+    /* Estilos para pantallas pequeñas como móviles */
+
+    nav {
+        display: none;
+    }
+   
+  }
+  
+  @media(min-width: 741px) and (max-width: 1024px) {
+    /* Estilos para pantallas medianas como tablets */
+
+    nav {
+        display: none;
+    }
+
+  }

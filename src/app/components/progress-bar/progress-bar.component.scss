@@ -1,0 +1,27 @@
+
+    .bar {
+        border-radius: 50px;
+        height: 2px;
+        background-color: white;
+        position: relative;
+        width: 200px;
+        .point {
+             position: absolute;
+             top:-7px;
+             height: 17px;
+             width: 17px;
+             border-radius: 50%;
+             border: 1.5px solid white;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+    
+             .center-point {
+                height: 6px;
+                width: 6px;
+                border-radius: 50%;
+                background-color: white;
+             }
+        }
+    }
+

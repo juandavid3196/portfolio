@@ -1,0 +1,294 @@
+.port-section {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(57,57,57,1) 0%, rgba(22,32,109,1) 0%, rgba(8,21,66,1) 48%, rgba(3,9,16,1) 100%);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 80px;
+    
+    .data-section {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        align-items: center;
+        padding: 40px 0;
+
+        .info-section {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .project-category {
+                color: #ff6767;
+                letter-spacing: 2px;
+            }
+    
+            .title {
+                font-weight: 500;
+                font-size: 20px;
+                letter-spacing: 1px; 
+            }
+    
+            .text-section {
+                font-size: 14px;
+                color: #c7c5c5;
+                letter-spacing: 1px;
+            }
+
+            .btn-section{
+                padding: 10px 0;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+               
+                .try-btn {
+                    border-radius: 50px;
+                    border:1px solid white;
+                    font-size: 15px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                    width: fit-content;
+                    padding: 5px 25px;
+                    cursor: pointer;
+                    background: transparent;
+                    color: white;
+                }
+        
+                .try-btn:hover {
+                    border-color: #0AAEF2;
+                    color: #0AAEF2;
+                    transform: scale(1.1);
+                    transition: transform 0.3s ease;
+                }
+    
+                .github-btn {
+                    border-radius: 50px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    border-style: none;
+                    background: #3e3d74;
+    
+                    img {
+                        height: 25px;
+                    }
+                }
+
+                .github-btn:hover{
+                    color: #ff6767;
+                    background-color: #3e3d747a;
+                }
+            }   
+    
+        }
+
+        .image-container {
+            width: 60%;
+            position: relative;
+            width: fit-content;
+            
+            .img-one, .img-two {
+                border-radius: 10px;
+                overflow: hidden;
+                
+                img {
+                    width:450px;
+                    height: 256px;
+                    border-radius: 10px;
+                    
+                }
+            }
+
+            .img-two {
+                position: absolute;
+                top: 20%;
+                right: 20%; 
+            }
+            
+        }
+       
+    }
+
+    .tech-section {
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px; 
+        height: fit-content;
+
+        .technical-info {
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+
+
+            .feature-box {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                height: 300px;
+                border: 1px solid #fb9999b0;
+                border-radius: 5px;
+            
+                
+                img {
+                    height: 40px;
+                    width: fit-content;
+                }
+
+                .ftr-text {
+                    color: white;
+                    font-size: 16px;
+                    font-weight: 500;
+                    letter-spacing: 0.5px;
+                }
+
+                .ftr-description {
+                    font-size: 13px;
+                    color: #c7c5c5;
+                    letter-spacing: 1px;
+                }
+            }
+            }
+        }
+
+        .technology-info {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 50px;
+
+
+           ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+           
+            li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+
+                .img-box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    height: 60px;
+                    width: 60px;
+                    background-color: #1c4669a8;
+                    box-shadow: 0px 0px 17px 5px #0909339c;
+                    img {
+                        height: 35px;
+                    }
+                }
+
+               
+            }
+           }
+            
+        }
+    }
+
+
+    @media(max-width:450px) {
+        .port-section {
+            padding: 40px 20px;
+
+            .data-section {
+                .image-container {
+                    .img-one,.img-two {
+                        img {
+                            height: 180px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
+        /* Estilos para pantallas pequeñas como móviles */
+
+        .port-section {
+            .data-section {
+                flex-direction: column-reverse;
+                gap: 120px;
+
+                .info-section {
+                    width: auto;
+                }
+            }
+
+            .tech-section {
+                .technical-info {
+                    grid-template-columns:1fr;
+                }
+
+                .technology-info {
+                    justify-content: center;
+                }
+            }
+        }
+
+    }  
+
+
+    @media(min-width: 841px) and (max-width: 1024px) {
+            /* Estilos para pantallas medianas como tablets */
+            
+        .port-section {
+            .data-section {
+                flex-direction: column-reverse;
+                gap: 120px;
+
+                .info-section {
+                    width: auto;
+                }
+            }
+
+            .tech-section {
+
+                .technical-info {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+                .technology-info {
+                    justify-content: center;
+                }
+            }
+        }
+            
+    
+      }
+
+      @media (min-width: 1500px) {
+        .port-section{
+         .data-section {
+             .info-section{
+                 width: 50%;
+             }
+         }
+         .tech-section {
+             .technical-info {
+                 grid-template-columns: repeat(4,1fr);
+             }
+         }
+ 
+        }
+     }
+     
+     @media (min-width: 1700px) {
+         .port-section{
+             .data-section {
+                 .info-section{
+                     width: 60%;
+                 }
+             }
+            }
+     }
