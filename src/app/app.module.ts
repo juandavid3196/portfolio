@@ -9,6 +9,8 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { PictureWindowComponent } from './components/picture-window/picture-window.component';
 import { ProjectOneComponent } from './components/project-one/project-one.component';
 import { ProjectTwoComponent } from './components/project-two/project-two.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProjectTwoComponent } from './components/project-two/project-two.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -453,12 +453,51 @@
                 </div>
             </div>
             <div class="main-right">
-                <form action="">
-                    <input type="text" name="name" placeholder="Name">
-                    <input type="email" name="email" id="" placeholder="Email">
-                    <textarea name="message" id="" placeholder="Message"></textarea>
-                    <button class="btn-submit">Send</button>
+                <form (ngSubmit)="onSubmit()" #form="ngForm">
+                    <div>
+                        <input 
+                            type="text" 
+                            [(ngModel)]="formData.name" 
+                            name="name" 
+                            placeholder="Name" 
+                            required 
+                            #name="ngModel">
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-message">
+                            <div *ngIf="name.errors?.['required']">Name is required</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <input 
+                            type="email" 
+                            [(ngModel)]="formData.email" 
+                            name="email" 
+                            placeholder="Email" 
+                            required 
+                            email 
+                            #email="ngModel">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+                            <div *ngIf="email.errors?.['required']">Email is Required</div>
+                            <div *ngIf="email.errors?.['email']">Email is not valid</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <textarea 
+                            name="message"  
+                            [(ngModel)]="formData.message"  
+                            placeholder="Message" 
+                            required 
+                            #message="ngModel"></textarea>
+                        <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error-message">
+                            <div *ngIf="message.errors?.['required']">Message is Required</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-submit" type="submit" [disabled]="form.invalid">Send</button>
                 </form>
+                
+                
             </div>  
            </div>
            <div class="bottom-contact">
