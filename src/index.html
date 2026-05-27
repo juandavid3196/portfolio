@@ -1,13 +1,2889 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Portfolio</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <base href="/" />
+    <title>Juan David Rios Rodriguez — Front-End Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./portfolio.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply theme + language before render to avoid flash
+      (function () {
+        var t = localStorage.getItem("jdrr-theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+        var l = localStorage.getItem("jdrr-lang") || "en";
+        document.documentElement.setAttribute("data-lang", l);
+        document.documentElement.setAttribute("lang", l);
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- ===================== NAV ===================== -->
+    <header class="nav" id="nav">
+      <a href="#hero" class="nav__brand">
+        <span class="nav__brand-mark">&lt;/&gt;</span>
+        <span class="nav__brand-text">JDRR</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#resume" data-i18n="nav.resume">Resume</a>
+        <a href="#ai-workflow" data-i18n="nav.aiWorkflow">AI Workflow</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Portfolio</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+      </nav>
+      <div class="nav__cta">
+        <div
+          class="lang-toggle"
+          id="langToggle"
+          role="group"
+          aria-label="Language"
+        >
+          <button
+            type="button"
+            class="lang-toggle__btn"
+            data-lang="en"
+            aria-label="English"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            class="lang-toggle__btn"
+            data-lang="es"
+            aria-label="Español"
+          >
+            ES
+          </button>
+          <span class="lang-toggle__thumb" aria-hidden="true"></span>
+        </div>
+        <div
+          class="theme-toggle"
+          id="themeToggle"
+          role="group"
+          aria-label="Theme"
+        >
+          <button
+            type="button"
+            class="theme-toggle__btn"
+            data-theme="light"
+            aria-label="Light mode"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="theme-toggle__btn"
+            data-theme="dark"
+            aria-label="Dark mode"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+          <span class="theme-toggle__thumb" aria-hidden="true"></span>
+        </div>
+        <a
+          href="#contact"
+          class="btn btn--primary btn--sm"
+          data-i18n="nav.contact"
+          >Contact</a
+        >
+        <button class="nav__burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero" data-screen-label="01 Hero">
+      <div class="hero__bg-grid" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__left">
+          <div class="hero__pill">
+            <span class="hero__pill-dot"></span>
+            <span data-i18n="hero.pill"
+              >Available for remote · US &amp; CO teams</span
+            >
+          </div>
+
+          <h1 class="hero__name">
+            <span class="hero__name-first">Juan David</span>
+            <span class="hero__name-last">Rios Rodriguez</span>
+          </h1>
+
+          <div class="hero__role-wrap">
+            <div class="hero__role-bar">
+              <span class="hero__role-text" data-i18n="hero.role"
+                >Front-End Engineer · Angular Specialist · AI-Integrated
+                Development</span
+              >
+              <span class="hero__role-glyph">&lt;/&gt;</span>
+            </div>
+          </div>
+
+          <p class="hero__tag" data-i18n="hero.tag">
+            I design scalable enterprise platforms with <b>Angular 20</b>,
+            <b>React</b> and <b>TypeScript</b>. Strategic AI integrated to
+            guarantee technical quality on every release.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">
+              <span data-i18n="hero.viewWork">View My Work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost" data-i18n="hero.contact"
+              >Contact Me</a
+            >
+          </div>
+
+          <div class="hero__socials">
+            <a
+              href="https://github.com/juandavid3196"
+              target="_blank"
+              aria-label="GitHub"
+              class="social"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.5-5.4 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.6 18.4.5 12 .5z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/juan-david-rios-rodriguez-93415b214/"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="social"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zM19 19h-3v-5.3c0-1.3-.5-2.2-1.6-2.2-1 0-1.4.7-1.6 1.3V19h-3V9h2.9v1.3c.4-.6 1.2-1.5 2.9-1.5 2.1 0 3.4 1.4 3.4 4V19z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:juandavid3196@gmail.com"
+              aria-label="Email"
+              class="social"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/573026635805"
+              target="_blank"
+              aria-label="WhatsApp"
+              class="social"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1c-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.4 1.3 4.9L2 22l5.2-1.4c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.8-3.1-.2-.3A8.3 8.3 0 1112 20.3z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- HERO RIGHT: profile card with badges -->
+        <div class="hero__right">
+          <div class="profile-card">
+            <div class="profile-card__shape profile-card__shape--a"></div>
+            <div class="profile-card__shape profile-card__shape--b"></div>
+            <div class="profile-card__shine"></div>
+
+            <div class="profile-card__photo">
+              <!-- Placeholder portrait — drag your real photo here -->
+              <div
+                class="profile-card__photo-inner"
+                data-placeholder="Drop your portrait here"
+              >
+                <svg
+                  viewBox="0 0 200 240"
+                  preserveAspectRatio="xMidYMid slice"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#4f46e5" />
+                      <stop offset="1" stop-color="#1e1b4b" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="200" height="240" fill="url(#pg)" />
+                  <circle cx="100" cy="90" r="38" fill="#0a0a1a" opacity=".6" />
+                  <path
+                    d="M40 230 C40 170, 160 170, 160 230 Z"
+                    fill="#0a0a1a"
+                    opacity=".6"
+                  />
+                </svg>
+                <span class="profile-card__placeholder-label">JDRR</span>
+              </div>
+            </div>
+
+            <div class="profile-card__badge profile-card__badge--top">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m8 3 4 8 5-5-1 11H4l3-9L8 3z" />
+              </svg>
+              <div>
+                <div class="profile-card__badge-num">4+</div>
+                <div
+                  class="profile-card__badge-label"
+                  data-i18n="hero.badge.years"
+                >
+                  Years<br />Experience
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card__badge profile-card__badge--bottom">
+              <span class="profile-card__badge-glyph">&lt;/&gt;</span>
+              <div>
+                <div class="profile-card__badge-num">Angular 20</div>
+                <div
+                  class="profile-card__badge-label"
+                  data-i18n="hero.badge.stack"
+                >
+                  Enterprise &amp; Production
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-card__chip">
+              <span class="profile-card__chip-dot"></span>
+              <span data-i18n="hero.chip">Open to Remote</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll">
+        <svg
+          width="14"
+          height="22"
+          viewBox="0 0 14 22"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <rect x="1" y="1" width="12" height="20" rx="6" />
+          <line x1="7" y1="6" x2="7" y2="10">
+            <animate
+              attributeName="y2"
+              values="10;14;10"
+              dur="1.5s"
+              repeatCount="indefinite"
+            />
+          </line>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="about" data-screen-label="02 About">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow" data-i18n="about.eyebrow"
+            >Get to know me</span
+          >
+          <h2 class="section__title" data-i18n="about.title">About</h2>
+          <div class="section__underline"></div>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__copy">
+            <p class="about__lede">
+              <span class="about__hello" data-i18n="about.hello">Hello,</span>
+              <span data-i18n="about.lede"
+                >I'm a self-driven Front-End Engineer who started coding alone —
+                and that curiosity still drives how I work today.</span
+              >
+            </p>
+            <p data-i18n="about.p1">
+              I specialize in <b>Angular 20</b> and <b>TypeScript</b>,
+              architecting enterprise-scale platforms from scratch. AI tooling —
+              Claude Skills, MCP — is part of the toolbelt, but the
+              architecture, the decisions and the ownership are mine.
+            </p>
+            <p data-i18n="about.p2">
+              I care about the full picture: the architecture that makes a
+              codebase last, the design system that keeps teams consistent, the
+              client conversation that turns a vague requirement into a precise
+              solution. I've shipped platforms real clients use daily — and
+              that's the kind of outcome I build toward.
+            </p>
+
+            <div class="about__stats">
+              <div class="stat">
+                <div class="stat__num">4<span>+</span></div>
+                <div class="stat__label" data-i18n="about.stat1">
+                  Years building<br />for production
+                </div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">1</div>
+                <div class="stat__label" data-i18n="about.stat2">
+                  Enterprise platform<br />shipped end-to-end
+                </div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">2</div>
+                <div class="stat__label" data-i18n="about.stat4">
+                  Full-stack apps<br />built end-to-end
+                </div>
+              </div>
+              <div class="stat">
+                <div class="stat__num">1<span>+</span></div>
+                <div class="stat__label" data-i18n="about.stat3">
+                  npm design system<br />published &amp; live
+                </div>
+              </div>
+            </div>
+
+            <div class="about__cta">
+              <a
+                href="assets/Juan_David_Rios_Rodriguez_Resume.pdf"
+                download
+                class="btn btn--primary"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
+                  />
+                </svg>
+                <span data-i18n="about.downloadCV">Download CV</span>
+              </a>
+              <a href="#contact" class="btn btn--ghost" data-i18n="about.talk"
+                >Let's Talk</a
+              >
+            </div>
+          </div>
+
+          <div class="about__info">
+            <div class="info-row">
+              <span class="info-row__k" data-i18n="about.info.name">Name</span
+              ><span class="info-row__v">Juan David Rios Rodriguez</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__k" data-i18n="about.info.role">Role</span
+              ><span class="info-row__v">Front-End Engineer</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__k" data-i18n="about.info.email">Email</span
+              ><span class="info-row__v">juandavid3196@gmail.com</span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__k" data-i18n="about.info.location"
+                >Location</span
+              ><span class="info-row__v"
+                >Medellín, Colombia
+                <span class="flag-co" aria-label="Colombia" title="Colombia"
+                  ><i></i><i></i><i></i></span
+              ></span>
+            </div>
+            <div class="info-row">
+              <span class="info-row__k" data-i18n="about.info.languages"
+                >Languages</span
+              ><span class="info-row__v" data-i18n="about.info.langValue"
+                >English B2/C1 · Spanish Native</span
+              >
+            </div>
+            <div class="info-row">
+              <span class="info-row__k" data-i18n="about.info.availability"
+                >Availability</span
+              >
+              <span class="info-row__v info-row__v--ok"
+                ><span class="dot"></span
+                ><span data-i18n="about.info.availValue"
+                  >Open for Remote</span
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AI WORKFLOW ===================== -->
+    <section
+      class="section ai-flow"
+      id="ai-workflow"
+      data-screen-label="03 AI Workflow"
+    >
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow" data-i18n="ai.eyebrow"
+            >How I ship faster</span
+          >
+          <h2 class="section__title" data-i18n="ai.title">
+            AI-Integrated Workflow
+          </h2>
+          <div class="section__underline"></div>
+          <p class="section__sub" data-i18n="ai.sub">
+            UI prototypes designed in Claude, refined through a handoff process,
+            and implemented via custom Skills — dramatically reducing
+            development time across the team.
+          </p>
+        </div>
+
+        <div class="ai-flow__pipeline">
+          <div class="ai-step">
+            <div class="ai-step__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v2H3v4h1v2a2 2 0 0 0 2 2h3v1a3 3 0 0 0 6 0v-1h3a2 2 0 0 0 2-2v-2h1v-4h-1V8a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3Z"
+                />
+              </svg>
+            </div>
+            <div class="ai-step__num">01</div>
+            <h3 data-i18n="ai.s1t">Claude Design</h3>
+            <p data-i18n="ai.s1d">
+              Mock the screen, the flow, and the empty states — fast, in
+              fidelity, before a single component is written.
+            </p>
+            <ul>
+              <li data-i18n="ai.s1l1">Prototype-to-code</li>
+              <li data-i18n="ai.s1l2">Design tokens locked early</li>
+            </ul>
+          </div>
+
+          <div class="ai-flow__arrow"></div>
+
+          <div class="ai-step">
+            <div class="ai-step__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <path d="M14 2v6h6M9 13l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="ai-step__num">02</div>
+            <h3 data-i18n="ai.s2t">Skills &amp; Masters</h3>
+            <p data-i18n="ai.s2d">
+              Custom Claude Skills encode the team's conventions: file
+              structure, naming, services, state, tests.
+            </p>
+            <ul>
+              <li data-i18n="ai.s2l1">Reusable prompt libraries</li>
+              <li data-i18n="ai.s2l2">Consistent output, every time</li>
+            </ul>
+          </div>
+
+          <div class="ai-flow__arrow"></div>
+
+          <div class="ai-step">
+            <div class="ai-step__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="3" width="20" height="6" rx="1" />
+                <rect x="2" y="15" width="20" height="6" rx="1" />
+                <path d="M6 6h.01M6 18h.01" />
+              </svg>
+            </div>
+            <div class="ai-step__num">03</div>
+            <h3 data-i18n="ai.s3t">MCP Servers</h3>
+            <p data-i18n="ai.s3d">
+              Model Context Protocol wires Claude into our repo, design system,
+              and Jira — context-aware, project-aware.
+            </p>
+            <ul>
+              <li data-i18n="ai.s3l1">Repo &amp; design-token aware</li>
+              <li data-i18n="ai.s3l2">Ticket-to-PR pipelines</li>
+            </ul>
+          </div>
+
+          <div class="ai-flow__arrow"></div>
+
+          <div class="ai-step">
+            <div class="ai-step__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m9 11 3 3 8-8" />
+                <path
+                  d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"
+                />
+              </svg>
+            </div>
+            <div class="ai-step__num">04</div>
+            <h3 data-i18n="ai.s4t">Ship to Prod</h3>
+            <p data-i18n="ai.s4d">
+              Code reviewed, tests written, deployed. AI accelerates the work —
+              the engineer still owns the outcome.
+            </p>
+            <ul>
+              <li data-i18n="ai.s4l1">Dev / QA / Prod pipelines</li>
+              <li data-i18n="ai.s4l2">Audit &amp; permission services</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESUME ===================== -->
+    <section class="section resume" id="resume" data-screen-label="04 Resume">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow" data-i18n="resume.eyebrow"
+            >My journey</span
+          >
+          <h2 class="section__title" data-i18n="resume.title">Resume</h2>
+          <div class="section__underline"></div>
+        </div>
+
+        <div class="resume__grid">
+          <!-- Column 1: Education + Languages -->
+          <div class="resume__col">
+            <h3 class="resume__col-title" data-i18n="resume.education">
+              Education
+            </h3>
+            <div class="resume__col-rule"></div>
+
+            <div class="resume-item">
+              <div class="resume-item__icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+              </div>
+              <div class="resume-item__body">
+                <div class="resume-item__year">2017 — 2024</div>
+                <div class="resume-item__title" data-i18n="resume.edu1.title">
+                  B.Sc. Systems Engineering
+                </div>
+                <div class="resume-item__org" data-i18n="resume.edu1.org">
+                  Universidad de Antioquia · Medellín
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item__icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                  />
+                </svg>
+              </div>
+              <div class="resume-item__body">
+                <div class="resume-item__year">2017 — Present</div>
+                <div class="resume-item__title" data-i18n="resume.edu2.title">
+                  Continuous Self-Learning
+                </div>
+                <div class="resume-item__org" data-i18n="resume.edu2.org">
+                  Platzi · Udemy · Anthropic Docs
+                </div>
+                <p class="resume-item__desc" data-i18n="resume.edu2.desc">
+                  Advanced Angular, software architecture, AI tooling,
+                  full-stack.
+                </p>
+              </div>
+            </div>
+
+            <h3
+              class="resume__col-title"
+              style="margin-top: 48px"
+              data-i18n="resume.languages"
+            >
+              Languages
+            </h3>
+            <div class="resume__col-rule"></div>
+
+            <div class="langs">
+              <div class="lang-ring" style="--pct: 78">
+                <svg
+                  viewBox="0 0 80 80"
+                  class="lang-ring__svg"
+                  aria-hidden="true"
+                >
+                  <circle cx="40" cy="40" r="34" class="lang-ring__track" />
+                  <circle cx="40" cy="40" r="34" class="lang-ring__fill" />
+                </svg>
+                <div class="lang-ring__inner">
+                  <span class="lang-ring__pct">78<i>%</i></span>
+                  <span class="lang-ring__lvl">B2/C1</span>
+                </div>
+                <div class="lang-ring__caption">
+                  <b data-i18n="resume.langEnglish">English</b>
+                  <span>EN · Upper-Intermediate</span>
+                </div>
+              </div>
+              <div class="lang-ring lang-ring--full" style="--pct: 100">
+                <svg
+                  viewBox="0 0 80 80"
+                  class="lang-ring__svg"
+                  aria-hidden="true"
+                >
+                  <circle cx="40" cy="40" r="34" class="lang-ring__track" />
+                  <circle cx="40" cy="40" r="34" class="lang-ring__fill" />
+                </svg>
+                <div class="lang-ring__inner">
+                  <span class="lang-ring__pct">100<i>%</i></span>
+                  <span class="lang-ring__lvl" data-i18n="resume.langNative"
+                    >Native</span
+                  >
+                </div>
+                <div class="lang-ring__caption">
+                  <b data-i18n="resume.langSpanish">Spanish</b>
+                  <span>ES · Native</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Experience timeline -->
+          <div class="resume__col">
+            <h3 class="resume__col-title" data-i18n="resume.experience">
+              Experience
+            </h3>
+            <div class="resume__col-rule"></div>
+
+            <div class="timeline">
+              <div class="timeline__item timeline__item--current">
+                <div class="timeline__dot"><span></span></div>
+                <div class="timeline__date" data-i18n="resume.exp1.date">
+                  2025 — Now
+                </div>
+                <div class="timeline__title" data-i18n="resume.exp1.title">
+                  Front-End Engineer
+                </div>
+                <div class="timeline__org" data-i18n="resume.exp1.org">
+                  Logit — Magnum Logistics S.A.S
+                </div>
+                <p data-i18n="resume.exp1.desc">
+                  Architected a full foreign-trade platform from scratch. Live
+                  in production, used daily by real clients with strong positive
+                  feedback. Co-developed the team's design system published as
+                  an npm library. Mentored juniors and ran technical onboarding.
+                </p>
+                <div class="timeline__tags">
+                  <span>Angular 20</span><span>TypeScript</span
+                  ><span>Signals</span><span>RxJS</span
+                  ><span>Claude Skills</span><span>MCP</span
+                  ><span>Design System</span>
+                </div>
+              </div>
+
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__date" data-i18n="resume.exp2.date">
+                  2024
+                </div>
+                <div class="timeline__title" data-i18n="resume.exp2.title">
+                  Front-End Developer
+                </div>
+                <div class="timeline__org" data-i18n="resume.exp2.org">
+                  Universidad de Antioquia
+                </div>
+                <p data-i18n="resume.exp2.desc">
+                  Built an accessibility-first platform for people with
+                  disabilities at UdeA — adaptive surveys, role-based
+                  interfaces, full REST integration. Capstone: end-to-end event
+                  management system for Teatro Pablo Tobón Uribe.
+                </p>
+                <div class="timeline__tags">
+                  <span>Angular</span><span>React</span><span>WCAG</span
+                  ><span>Redux</span><span>Docker</span>
+                </div>
+              </div>
+
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__date" data-i18n="resume.exp3.date">
+                  2021 — 2022
+                </div>
+                <div class="timeline__title" data-i18n="resume.exp3.title">
+                  Web Developer
+                </div>
+                <div class="timeline__org" data-i18n="resume.exp3.org">
+                  Adage LATAM
+                </div>
+                <p data-i18n="resume.exp3.desc">
+                  First professional role in a production agile environment.
+                  Contributed to front-end components, unit and E2E testing, and
+                  gained hands-on exposure to backend microservices and cloud
+                  pipelines.
+                </p>
+                <div class="timeline__tags">
+                  <span>Angular</span><span>.NET</span><span>Azure DevOps</span
+                  ><span>CI/CD</span>
+                </div>
+              </div>
+
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__date" data-i18n="resume.exp4.date">
+                  2017 — 2018
+                </div>
+                <div class="timeline__title" data-i18n="resume.exp4.title">
+                  Freelance Web Developer
+                </div>
+                <div class="timeline__org" data-i18n="resume.exp4.org">
+                  Independent
+                </div>
+                <p data-i18n="resume.exp4.desc">
+                  Built e-commerce, real estate and small-business websites
+                  end-to-end. Managed client relationships independently from
+                  requirements to delivery.
+                </p>
+                <div class="timeline__tags">
+                  <span>WordPress</span><span>PHP</span><span>SEO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW I WORK ===================== -->
+    <section
+      class="section how-i-work"
+      id="strengths"
+      data-screen-label="05 Strengths"
+    >
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow" data-i18n="strengths.eyebrow"
+            >Beyond the code</span
+          >
+          <h2 class="section__title" data-i18n="strengths.title">How I Work</h2>
+          <div class="section__underline"></div>
+          <p class="section__sub" data-i18n="strengths.sub">
+            The traits that drive how I show up to a team — the things that make
+            the engineering work actually ship.
+          </p>
+        </div>
+
+        <div class="strengths__grid">
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path
+                  d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.4 1 1 1 1.7V18h6v-1.6c0-.7.4-1.3 1-1.7A7 7 0 0 0 12 2Z"
+                />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s1t">Self-Driven Learning</h4>
+            <p data-i18n="strengths.s1d">
+              I started programming alone — that same curiosity still drives
+              every skill I pick up.
+            </p>
+          </div>
+
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path d="M3 21V9l9-6 9 6v12M9 21v-8h6v8" />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s2t">Architectural Thinking</h4>
+            <p data-i18n="strengths.s2d">
+              I think in systems — the patterns and boundaries that keep a
+              codebase healthy as it grows.
+            </p>
+          </div>
+
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <circle cx="9" cy="7" r="4" />
+                <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                <circle cx="17" cy="7" r="3" />
+                <path d="M22 21v-1a3 3 0 0 0-2-2.8" />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s3t">Mentorship &amp; Reviews</h4>
+            <p data-i18n="strengths.s3d">
+              Junior onboarding, pair sessions, code reviews — leveling
+              teammates up makes the whole team faster.
+            </p>
+          </div>
+
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path
+                  d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"
+                />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s4t">Client Communication</h4>
+            <p data-i18n="strengths.s4d">
+              I translate vague requirements into precise scope — and explain
+              trade-offs in plain language.
+            </p>
+          </div>
+
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s5t">Problem Solving</h4>
+            <p data-i18n="strengths.s5d">
+              Break it apart, find the root cause, ship the fix — repeat. Hard
+              bugs are my favorite kind.
+            </p>
+          </div>
+
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path
+                  d="M12 2v8M12 22v-8M5 12l-3-3 3-3M19 12l3-3-3-3M5 19l-3 3 3 3M19 19l3 3-3 3"
+                />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s6t">Decision Making</h4>
+            <p data-i18n="strengths.s6d">
+              I commit on incomplete information when it matters — and document
+              the why so the team can reverse it later if needed.
+            </p>
+          </div>
+
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path d="M12 2 4 6v6a10 10 0 0 0 8 9 10 10 0 0 0 8-9V6Z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s7t">Ownership</h4>
+            <p data-i18n="strengths.s7d">
+              I take it from "your problem" to "my problem" the moment I touch
+              the code — and stay with it through to production.
+            </p>
+          </div>
+
+          <div class="strength">
+            <div class="strength__icon">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.9" />
+                <path d="M16 3.1a4 4 0 0 1 0 7.8" />
+              </svg>
+            </div>
+            <h4 data-i18n="strengths.s8t">Team Collaboration</h4>
+            <p data-i18n="strengths.s8d">
+              Designers, PMs, backend, infra — I align early and often so the
+              team ships one product, not four.
+            </p>
+          </div>
+        </div>
+
+        <!-- Methodologies as chips below -->
+        <div class="methods">
+          <div class="methods__head">
+            <span class="methods__label" data-i18n="strengths.methods"
+              >Methodologies &amp; habits</span
+            >
+            <span class="methods__rule"></span>
+          </div>
+          <div class="methods__chips">
+            <span class="method-chip">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 12a9 9 0 1 0 9-9" />
+                <path d="m3 4 0 5 5 0" />
+              </svg>
+              <span data-i18n="strengths.m1">SCRUM &amp; Agile</span>
+            </span>
+            <span class="method-chip">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="6" cy="6" r="2.5" />
+                <circle cx="6" cy="18" r="2.5" />
+                <circle cx="18" cy="6" r="2.5" />
+                <path d="M6 8.5v7M18 8.5c0 5-6 5-6 9.5" />
+              </svg>
+              <span data-i18n="strengths.m2">Git-flow &amp; PR reviews</span>
+            </span>
+            <span class="method-chip">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="9" cy="8" r="3" />
+                <circle cx="17" cy="8" r="3" />
+                <path
+                  d="M3 21v-1a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v1M21 21v-1a4 4 0 0 0-3-3.9"
+                />
+              </svg>
+              <span data-i18n="strengths.m3">Pair programming</span>
+            </span>
+            <span class="method-chip">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <path d="M14 2v6h6M9 13h6M9 17h6" />
+              </svg>
+              <span data-i18n="strengths.m4"
+                >Architecture decision records</span
+              >
+            </span>
+            <span class="method-chip">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+              <span data-i18n="strengths.m5">Time management</span>
+            </span>
+            <span class="method-chip">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m20 7-9 9-4-4" />
+                <circle cx="12" cy="12" r="9" />
+              </svg>
+              <span data-i18n="strengths.m6">Discipline</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section skills" id="skills" data-screen-label="05 Skills">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow" data-i18n="skills.eyebrow"
+            >My stack</span
+          >
+          <h2 class="section__title" data-i18n="skills.title">Skill Set</h2>
+          <div class="section__underline"></div>
+        </div>
+
+        <div class="skills__grid">
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--angular">A</div>
+              <h3>Angular 20</h3>
+              <span class="skill-card__level">Expert</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Standalone Components &amp; Signals</li>
+              <li>NgRx &amp; State Architecture</li>
+              <li>Facades · DI Tokens · Resolvers</li>
+              <li>Interceptors (access / refresh tokens)</li>
+              <li>Reactive Forms &amp; Validators</li>
+              <li>Lazy Loading &amp; Micro-frontends</li>
+              <li>i18n / Translations</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--ts">TS</div>
+              <h3>TypeScript</h3>
+              <span class="skill-card__level">Expert</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Strict typing &amp; generics</li>
+              <li>Union &amp; intersection types</li>
+              <li>Interfaces, enums, utility types</li>
+              <li>Type-safe service layers</li>
+              <li>Pipe-driven RxJS streams</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--rxjs">∞</div>
+              <h3>RxJS</h3>
+              <span class="skill-card__level">Advanced</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Observables, Subjects, BehaviorSubjects</li>
+              <li>Higher-order operators</li>
+              <li>Error handling &amp; retry strategies</li>
+              <li>Combining streams</li>
+              <li>Memory-safe subscription patterns</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--ai">AI</div>
+              <h3>AI Development</h3>
+              <span class="skill-card__level">Daily</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Claude Agents &amp; Skills</li>
+              <li>Masters (prompt libraries)</li>
+              <li>MCP Servers</li>
+              <li>AI-to-Design handoff</li>
+              <li>Prototype-to-Code pipelines</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--react">⚛</div>
+              <h3>React</h3>
+              <span class="skill-card__level">Advanced</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Hooks (useState, useEffect, useMemo)</li>
+              <li>Custom Hooks &amp; composition</li>
+              <li>State management (Redux Toolkit)</li>
+              <li>React Router &amp; routing patterns</li>
+              <li>Next.js fundamentals</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--ds">◐</div>
+              <h3>Design Systems</h3>
+              <span class="skill-card__level">Advanced</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Design Tokens (SCSS variables / mixins)</li>
+              <li>npm-published component libraries</li>
+              <li>PrimeNG &amp; Bootstrap integration</li>
+              <li>WCAG accessibility</li>
+              <li>Reusable tables, forms, modals, layouts</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--css">{ }</div>
+              <h3>HTML &amp; CSS</h3>
+              <span class="skill-card__level">Expert</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Semantic HTML5</li>
+              <li>SCSS architecture (BEM, ITCSS)</li>
+              <li>Flexbox &amp; Grid</li>
+              <li>Animations &amp; transitions</li>
+              <li>Responsive &amp; mobile-first</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--git">↟</div>
+              <h3>Git &amp; DevOps</h3>
+              <span class="skill-card__level">Advanced</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>Git-flow &amp; branching strategy</li>
+              <li>Pull requests &amp; code reviews</li>
+              <li>Azure DevOps · Jira · Bitbucket</li>
+              <li>CI/CD pipelines</li>
+              <li>Multi-env deployments (dev/QA/prod)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section
+      class="section projects"
+      id="projects"
+      data-screen-label="06 Projects"
+    >
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow" data-i18n="projects.eyebrow"
+            >Selected work</span
+          >
+          <h2 class="section__title" data-i18n="projects.title">My Projects</h2>
+          <div class="section__underline"></div>
+        </div>
+
+        <!-- =============== Project 1: Logit =============== -->
+        <article class="project project--featured" data-project="logit">
+          <div class="project__main">
+            <div class="project__copy">
+              <span class="project__flagship">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="m12 2 3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" />
+                </svg>
+                <span data-i18n="logit.flagship">Flagship Project</span>
+              </span>
+              <div class="project__kicker" data-i18n="logit.kicker">
+                Live in Production · 2025
+              </div>
+              <h3 class="project__title" data-i18n="logit.title">
+                Logit — Foreign Trade Platform
+              </h3>
+              <p class="project__desc" data-i18n="logit.desc">
+                End-to-end Angular 20 platform for imports, exports, purchase
+                orders, product catalog and client management. I led front-end
+                architecture from scratch — UI logic, component design, system
+                structure — translating complex foreign-trade requirements into
+                scalable, high-performance interfaces. Live in production, used
+                daily by real clients.
+              </p>
+              <div class="project__highlights">
+                <div>
+                  <b data-i18n="logit.h1k">Role</b
+                  ><span data-i18n="logit.h1v">Lead Front-End Engineer</span>
+                </div>
+                <div>
+                  <b data-i18n="logit.h2k">Stack</b
+                  ><span data-i18n="logit.h2v"
+                    >Angular 20 · TS · RxJS · SCSS · PrimeNG</span
+                  >
+                </div>
+                <div>
+                  <b data-i18n="logit.h3k">Architecture</b
+                  ><span data-i18n="logit.h3v"
+                    >Standalone · Signals · Resolvers · Interceptors</span
+                  >
+                </div>
+                <div>
+                  <b data-i18n="logit.h4k">Workflow</b
+                  ><span data-i18n="logit.h4v"
+                    >AI-assisted · SCRUM · Git-flow</span
+                  >
+                </div>
+              </div>
+              <div class="project__cta">
+                <button
+                  type="button"
+                  class="link-arrow case-toggle"
+                  aria-expanded="false"
+                >
+                  <span data-i18n="projects.readCase">Read case study</span>
+                  <svg
+                    class="link-arrow__chev"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="project__media">
+              <div class="project__mockups project__mockups--logit">
+                <!-- Back mockup: Imports table -->
+                <div class="mock mock--logit-imports">
+                  <div class="mock__chrome">
+                    <span class="mock__dot mock__dot--r"></span>
+                    <span class="mock__dot mock__dot--y"></span>
+                    <span class="mock__dot mock__dot--g"></span>
+                    <div class="mock__url">logit.app/importaciones</div>
+                  </div>
+                  <div class="mock__body mock__body--logit">
+                    <aside class="lg-side">
+                      <div class="lg-side__brand">
+                        <span class="lg-side__logo">L</span>
+                        <span class="lg-side__name">LOGIT <em>LRP</em></span>
+                      </div>
+                      <div class="lg-side__nav">
+                        <div class="lg-side__item lg-side__item--on">
+                          <span class="lg-ico">⬇</span>Importaciones
+                        </div>
+                        <div class="lg-side__item">
+                          <span class="lg-ico">⬆</span>Exportaciones
+                        </div>
+                        <div class="lg-side__item">
+                          <span class="lg-ico">▤</span>Órdenes de compra
+                        </div>
+                        <div class="lg-side__item">
+                          <span class="lg-ico">⚙</span>Catálogo
+                        </div>
+                        <div class="lg-side__item">
+                          <span class="lg-ico">◎</span>Clientes
+                        </div>
+                      </div>
+                      <div class="lg-side__foot">
+                        <span class="lg-side__chip">v2.4.1</span>
+                      </div>
+                    </aside>
+                    <section class="lg-main">
+                      <div class="lg-bar">
+                        <div class="lg-bread">
+                          Importaciones <span>›</span> Listado
+                        </div>
+                        <div class="lg-user">
+                          <div class="lg-user__av">JR</div>
+                        </div>
+                      </div>
+
+                      <div class="lg-head">
+                        <div>
+                          <h6 class="lg-title">Importaciones activas</h6>
+                          <p class="lg-sub">24 operaciones · 4 clientes</p>
+                        </div>
+                        <div class="lg-btn-row">
+                          <button class="lg-btn lg-btn--ghost">Exportar</button>
+                          <button class="lg-btn lg-btn--prim">
+                            + Nueva importación
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="lg-chips">
+                        <span class="lg-chip lg-chip--on">Todos <i>24</i></span>
+                        <span class="lg-chip">En tránsito <i>8</i></span>
+                        <span class="lg-chip">Aduana <i>5</i></span>
+                        <span class="lg-chip">Entregadas <i>11</i></span>
+                      </div>
+
+                      <div class="lg-table">
+                        <div class="lg-row lg-row--head">
+                          <span>ID</span><span>Cliente</span><span>Origen</span
+                          ><span>ETA</span><span>Estado</span>
+                        </div>
+                        <div class="lg-row">
+                          <span class="lg-id">IMP-0421</span>
+                          <span>ACME Corp</span>
+                          <span>Shanghai 🇨🇳</span>
+                          <span>14 Oct</span>
+                          <span class="lg-pill lg-pill--blue">En tránsito</span>
+                        </div>
+                        <div class="lg-row">
+                          <span class="lg-id">IMP-0420</span>
+                          <span>Globex Inc</span>
+                          <span>Rotterdam 🇳🇱</span>
+                          <span>18 Oct</span>
+                          <span class="lg-pill lg-pill--amber">Aduana</span>
+                        </div>
+                        <div class="lg-row">
+                          <span class="lg-id">IMP-0419</span>
+                          <span>Initech</span>
+                          <span>Houston 🇺🇸</span>
+                          <span>—</span>
+                          <span class="lg-pill lg-pill--green">Entregada</span>
+                        </div>
+                        <div class="lg-row">
+                          <span class="lg-id">IMP-0418</span>
+                          <span>Soylent</span>
+                          <span>Mumbai 🇮🇳</span>
+                          <span>22 Oct</span>
+                          <span class="lg-pill lg-pill--red">En espera</span>
+                        </div>
+                        <div class="lg-row">
+                          <span class="lg-id">IMP-0417</span>
+                          <span>Hooli</span>
+                          <span>Barcelona 🇪🇸</span>
+                          <span>27 Oct</span>
+                          <span class="lg-pill lg-pill--blue">En tránsito</span>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+
+                <!-- Front mockup: Import detail KPI card -->
+                <div class="mock mock--logit-detail">
+                  <div class="mock__chrome mock__chrome--sm">
+                    <span class="mock__dot mock__dot--r"></span>
+                    <span class="mock__dot mock__dot--y"></span>
+                    <span class="mock__dot mock__dot--g"></span>
+                  </div>
+                  <div class="mock__body mock__body--logit-detail">
+                    <div class="lg-detail">
+                      <div class="lg-detail__head">
+                        <span class="lg-detail__tag">IMP-2025-0421</span>
+                        <span class="lg-detail__status">En tránsito</span>
+                      </div>
+                      <h6 class="lg-detail__h">ACME Corp · Electrónica</h6>
+                      <p class="lg-detail__sub">Shanghai → Buenaventura</p>
+
+                      <div class="lg-detail__steps">
+                        <div class="lg-step lg-step--done">Orden</div>
+                        <div class="lg-step lg-step--done">Embarque</div>
+                        <div class="lg-step lg-step--cur">Tránsito</div>
+                        <div class="lg-step">Aduana</div>
+                        <div class="lg-step">Entrega</div>
+                      </div>
+
+                      <div class="lg-detail__stats">
+                        <div class="lg-kpi">
+                          <div class="lg-kpi__num">$184<span>K</span></div>
+                          <div class="lg-kpi__lbl">Valor FOB</div>
+                        </div>
+                        <div class="lg-kpi">
+                          <div class="lg-kpi__num">12<span>d</span></div>
+                          <div class="lg-kpi__lbl">Tránsito</div>
+                        </div>
+                        <div class="lg-kpi">
+                          <div class="lg-kpi__num">8</div>
+                          <div class="lg-kpi__lbl">Contenedores</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expandable case study -->
+          <div class="case-study" hidden>
+            <div class="case-study__intro">
+              <h4 data-i18n="logit.caseTitle">Core capabilities I built</h4>
+              <p data-i18n="logit.caseSub">
+                Eight production-grade systems shipped end-to-end as part of the
+                Logit platform — each one designed for scale, accessibility, and
+                the speed an operations team needs.
+              </p>
+            </div>
+            <div class="case-grid">
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="4" y="11" width="16" height="10" rx="2" />
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f1t">Auth &amp; RBAC</h5>
+                <p data-i18n="logit.f1d">
+                  Access &amp; refresh token authentication with role-based
+                  access control and granular permission verification across
+                  every module of the platform.
+                </p>
+              </div>
+
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f2t">Modular Architecture</h5>
+                <p data-i18n="logit.f2d">
+                  Standalone components, signals, resolvers, pipes, shared
+                  modules, layouts and global services — Angular best practices
+                  with strong typing across the codebase.
+                </p>
+              </div>
+
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M12 2 2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f3t">Design System</h5>
+                <p data-i18n="logit.f3d">
+                  Enterprise-grade system with centralized SCSS variables,
+                  mixins, utilities and reusable components — buttons, forms,
+                  tables, modals, layouts, detail and edit pages.
+                </p>
+              </div>
+
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M9 11l3 3L22 4" />
+                    <path
+                      d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"
+                    />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f4t">Reactive Forms</h5>
+                <p data-i18n="logit.f4d">
+                  Advanced reactive forms with real-time validation, dynamic
+                  catalog preloading, complex multi-step flows and centralized
+                  CRUD services.
+                </p>
+              </div>
+
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f5t">Audit Services</h5>
+                <p data-i18n="logit.f5d">
+                  Custom audit services for error validation and traceability —
+                  every critical action observable, debuggable and reviewable
+                  across environments.
+                </p>
+              </div>
+
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16" />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f6t">RESTful Integration</h5>
+                <p data-i18n="logit.f6d">
+                  Continuous collaboration with backend to integrate RESTful
+                  APIs and microservice endpoints — stable communication, data
+                  consistency, optimized performance.
+                </p>
+              </div>
+
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path
+                      d="M2 12h20M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"
+                    />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f7t">i18n &amp; Filters</h5>
+                <p data-i18n="logit.f7d">
+                  Full internationalization with massive form &amp; interface
+                  translation, supporting multiple locales — plus advanced
+                  filters, pagination and animation patterns.
+                </p>
+              </div>
+
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M12 2a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v2H3v4h1v2a2 2 0 0 0 2 2h3v1a3 3 0 0 0 6 0v-1h3a2 2 0 0 0 2-2v-2h1v-4h-1V8a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3Z"
+                    />
+                  </svg>
+                </div>
+                <h5 data-i18n="logit.f8t">AI-Assisted Workflow</h5>
+                <p data-i18n="logit.f8d">
+                  Claude Skills, Masters and MCP servers integrated into daily
+                  development — accelerating productivity while maintaining
+                  high-quality code standards across the team.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- =============== Project 2: UdeA Accessibility =============== -->
+        <article class="project project--reverse" data-project="udea">
+          <div class="project__main">
+            <div class="project__copy">
+              <div class="project__kicker" data-i18n="udea.kicker">
+                Web Application · 2024
+              </div>
+              <h3 class="project__title" data-i18n="udea.title">
+                Characterization Platform for People with Disabilities
+              </h3>
+              <p class="project__desc" data-i18n="udea.desc">
+                WCAG-aligned platform for the Universidad de Antioquia that
+                profiles individuals with disabilities through fully
+                configurable adaptive surveys. Multi-configuration logic with
+                dynamic question types, role-based interfaces, conditional
+                rendering, accessible UI for users with visual or hearing
+                impairments — and a complete REST API integration that drives
+                data-informed decisions about educational programs and
+                infrastructure.
+              </p>
+              <div class="project__highlights">
+                <div>
+                  <b data-i18n="udea.h1k">Role</b
+                  ><span data-i18n="udea.h1v">Front-End Developer</span>
+                </div>
+                <div>
+                  <b data-i18n="udea.h2k">Stack</b
+                  ><span data-i18n="udea.h2v"
+                    >Angular · TypeScript · SCSS · REST</span
+                  >
+                </div>
+                <div>
+                  <b data-i18n="udea.h3k">Focus</b
+                  ><span data-i18n="udea.h3v"
+                    >WCAG accessibility · Adaptive surveys</span
+                  >
+                </div>
+                <div>
+                  <b data-i18n="udea.h4k">Impact</b
+                  ><span data-i18n="udea.h4v"
+                    >Data for institutional decision-making</span
+                  >
+                </div>
+              </div>
+              <div class="project__cta">
+                <button
+                  type="button"
+                  class="link-arrow case-toggle"
+                  aria-expanded="false"
+                >
+                  <span data-i18n="projects.readCase">Read case study</span>
+                  <svg
+                    class="link-arrow__chev"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="project__media">
+              <div class="project__mockups project__mockups--udea">
+                <!-- Back mockup: Survey builder -->
+                <div class="mock mock--udea-builder">
+                  <div class="mock__chrome">
+                    <span class="mock__dot mock__dot--r"></span>
+                    <span class="mock__dot mock__dot--y"></span>
+                    <span class="mock__dot mock__dot--g"></span>
+                    <div class="mock__url">
+                      caracterizacion.udea.edu.co/builder
+                    </div>
+                  </div>
+                  <div class="mock__body mock__body--builder">
+                    <aside class="udea-side">
+                      <div class="udea-side__brand">UdeA<span>·</span></div>
+                      <div class="udea-side__sub">Encuesta de prueba</div>
+                      <div class="udea-side__rule"></div>
+                      <div class="udea-q-list">
+                        <div class="udea-q-item">
+                          <span class="udea-q-num">1</span
+                          ><span>¿Presenta alguna de las siguientes…</span>
+                        </div>
+                        <div class="udea-q-item">
+                          <span class="udea-q-num">2</span
+                          ><span>¿Se encuentra dentro de…</span>
+                        </div>
+                        <div class="udea-q-item udea-q-item--active">
+                          <span class="udea-q-num">3</span
+                          ><span>¿Qué tan bien se siente…</span>
+                        </div>
+                        <div class="udea-q-add">
+                          <span>+</span> Añadir pregunta
+                        </div>
+                      </div>
+                    </aside>
+                    <section class="udea-edit">
+                      <div class="udea-edit__tabs">
+                        <span class="udea-edit__tab udea-edit__tab--on"
+                          >Editar</span
+                        >
+                        <span class="udea-edit__tab">Vista</span>
+                      </div>
+                      <div class="udea-edit__field">
+                        <span class="udea-edit__lbl">3.</span>
+                        <span class="udea-edit__ph">Ingrese la pregunta…</span>
+                      </div>
+                      <div class="udea-edit__scale">
+                        <span class="scale-pt scale-pt--cur">0</span>
+                        <span class="scale-pt">1</span>
+                        <span class="scale-pt">2</span>
+                        <span class="scale-pt">3</span>
+                        <span class="scale-pt">4</span>
+                        <span class="scale-pt">5</span>
+                        <span class="scale-pt">6</span>
+                        <span class="scale-pt">7</span>
+                        <span class="scale-pt">8</span>
+                        <span class="scale-pt scale-pt--end">10</span>
+                      </div>
+                      <div class="udea-edit__scale-labels">
+                        <span>Menor</span><span>Neutral</span><span>Mayor</span>
+                      </div>
+                      <div class="udea-edit__opts">
+                        <div class="udea-opt-row">
+                          <span>Steps: 10</span
+                          ><span class="udea-toggle udea-toggle--on"></span>
+                        </div>
+                        <div class="udea-opt-row">
+                          <span>Obligatorio</span
+                          ><span class="udea-toggle udea-toggle--on"></span>
+                        </div>
+                        <div class="udea-opt-row">
+                          <span>Incluir N/A</span
+                          ><span class="udea-toggle"></span>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <!-- Front mockup: Live preview -->
+                <div class="mock mock--udea-preview">
+                  <div class="mock__chrome mock__chrome--sm">
+                    <span class="mock__dot mock__dot--r"></span>
+                    <span class="mock__dot mock__dot--y"></span>
+                    <span class="mock__dot mock__dot--g"></span>
+                  </div>
+                  <div class="mock__body mock__body--preview">
+                    <div class="preview-card">
+                      <div class="preview-card__step">Pregunta 3 / 12</div>
+                      <h6 class="preview-card__q">
+                        ¿Qué tan bien se siente dentro del campus?
+                      </h6>
+                      <div class="preview-scale">
+                        <span></span><span></span><span></span><span></span>
+                        <span class="cur"></span>
+                        <span></span><span></span><span></span><span></span
+                        ><span></span>
+                      </div>
+                      <div class="preview-card__hint">
+                        <span>Menor</span><span>Mayor</span>
+                      </div>
+                      <button class="preview-card__btn">Siguiente →</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study" hidden>
+            <div class="case-study__intro">
+              <h4 data-i18n="udea.caseTitle">Core modules of the platform</h4>
+              <p data-i18n="udea.caseSub">
+                Seven configurable modules that turned a complex accessibility
+                need into a working tool used inside the university.
+              </p>
+            </div>
+            <div class="case-grid">
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="4" y="11" width="16" height="10" rx="2" />
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f1t">Authentication &amp; Authorization</h5>
+                <p data-i18n="udea.f1d">
+                  Secure user login and access control that only lets authorized
+                  roles touch the survey, evaluation and admin features they
+                  own.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M9 11l3 3L22 4" />
+                    <path
+                      d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"
+                    />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f2t">Survey Manager</h5>
+                <p data-i18n="udea.f2d">
+                  Lets creators design, organize and manage fully custom surveys
+                  — branching logic, custom answer types, reusable structure
+                  across cohorts.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f3t">Question Bank</h5>
+                <p data-i18n="udea.f3d">
+                  Centralized repository of pre-defined questions reused across
+                  surveys — drastically cutting the time to publish a new
+                  evaluation.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                      d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+                    />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f4t">Settings</h5>
+                <p data-i18n="udea.f4d">
+                  Per-user customization of the experience — accessibility
+                  preferences, account settings, and platform-wide configuration
+                  for admins.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f5t">Preview Mode</h5>
+                <p data-i18n="udea.f5d">
+                  Real-time preview of how a survey will render before
+                  publishing — so creators ship confidently with zero surprises
+                  for the respondent.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M3 3v18h18" />
+                    <path d="m7 14 4-4 4 4 5-5" />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f6t">Evaluation System</h5>
+                <p data-i18n="udea.f6d">
+                  Automatically processes and scores responses against
+                  predefined criteria — turning raw answers into structured,
+                  decision-ready insights.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                    <circle cx="17" cy="7" r="3" />
+                    <path d="M22 21v-1a3 3 0 0 0-2-2.8" />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f7t">Administration Panel</h5>
+                <p data-i18n="udea.f7d">
+                  A full dashboard for admins to oversee users, manage content,
+                  and configure the platform end-to-end with proper guardrails.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" />
+                  </svg>
+                </div>
+                <h5 data-i18n="udea.f8t">Accessibility-First UI</h5>
+                <p data-i18n="udea.f8d">
+                  Interfaces designed with WCAG in mind — color contrast,
+                  keyboard navigation and screen-reader support baked in, not
+                  bolted on.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- =============== Project 3: Teatro Pablo Tobón =============== -->
+        <article class="project" data-project="theater">
+          <div class="project__main">
+            <div class="project__copy">
+              <div class="project__kicker" data-i18n="theater.kicker">
+                Capstone Project · 2024
+              </div>
+              <h3 class="project__title" data-i18n="theater.title">
+                Events Manager — Teatro Pablo Tobón Uribe
+              </h3>
+              <p class="project__desc" data-i18n="theater.desc">
+                A complete events platform for one of Medellín's most important
+                cultural venues. Manages every activity around organizing
+                theater events — event creation, sub-event management,
+                scheduling, ticketing, role-based access — and integrates the
+                Calendar API for visual planning. Legal documents, attendance
+                metrics and reports all live in one place.
+              </p>
+              <div class="project__highlights">
+                <div>
+                  <b data-i18n="theater.h1k">Role</b
+                  ><span data-i18n="theater.h1v">Full-Stack Developer</span>
+                </div>
+                <div>
+                  <b data-i18n="theater.h2k">Front-end</b
+                  ><span data-i18n="theater.h2v">React · Redux · Tailwind</span>
+                </div>
+                <div>
+                  <b data-i18n="theater.h3k">Back-end</b
+                  ><span data-i18n="theater.h3v"
+                    >Python · Node.js · Docker</span
+                  >
+                </div>
+                <div>
+                  <b data-i18n="theater.h4k">Integrations</b
+                  ><span data-i18n="theater.h4v"
+                    >Calendar API · Document storage</span
+                  >
+                </div>
+              </div>
+              <div class="project__cta">
+                <button
+                  type="button"
+                  class="link-arrow case-toggle"
+                  aria-expanded="false"
+                >
+                  <span data-i18n="projects.readCase">Read case study</span>
+                  <svg
+                    class="link-arrow__chev"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="project__media">
+              <div class="project__mockups project__mockups--theater">
+                <!-- Back mockup: Calendar -->
+                <div class="mock mock--theater-cal">
+                  <div class="mock__chrome">
+                    <span class="mock__dot mock__dot--r"></span>
+                    <span class="mock__dot mock__dot--y"></span>
+                    <span class="mock__dot mock__dot--g"></span>
+                    <div class="mock__url">eventos.teatropablotobon.org</div>
+                  </div>
+                  <div class="mock__body mock__body--cal">
+                    <aside class="thr-side">
+                      <div class="thr-side__brand">
+                        <div class="thr-side__logo">PTU</div>
+                        <div>
+                          <div class="thr-side__name">Pablo Tobón</div>
+                          <div class="thr-side__role">Coordinador</div>
+                        </div>
+                      </div>
+                      <div class="thr-side__nav">
+                        <div class="thr-side__item">Modalidades</div>
+                        <div class="thr-side__item">Eventos</div>
+                        <div class="thr-side__item">Reportes</div>
+                        <div class="thr-side__item thr-side__item--on">
+                          Calendario
+                        </div>
+                        <div class="thr-side__item">Documentos</div>
+                        <div class="thr-side__item">Configuración</div>
+                      </div>
+                    </aside>
+                    <section class="thr-cal">
+                      <div class="thr-cal__head">
+                        <div class="thr-cal__title">Octubre 2025</div>
+                        <div class="thr-cal__views">
+                          <span class="thr-cal__view thr-cal__view--on"
+                            >Mes</span
+                          >
+                          <span class="thr-cal__view">Semana</span>
+                          <span class="thr-cal__view">Día</span>
+                        </div>
+                      </div>
+                      <div class="thr-cal__week">
+                        <span>Lun</span><span>Mar</span><span>Mié</span
+                        ><span>Jue</span><span>Vie</span><span>Sáb</span
+                        ><span>Dom</span>
+                      </div>
+                      <div class="thr-cal__grid">
+                        <div class="thr-day thr-day--dim"><span>29</span></div>
+                        <div class="thr-day thr-day--dim"><span>30</span></div>
+                        <div class="thr-day"><span>1</span></div>
+                        <div class="thr-day"><span>2</span></div>
+                        <div class="thr-day">
+                          <span>3</span>
+                          <div class="thr-evt thr-evt--a">Filarmónica</div>
+                        </div>
+                        <div class="thr-day"><span>4</span></div>
+                        <div class="thr-day"><span>5</span></div>
+
+                        <div class="thr-day"><span>6</span></div>
+                        <div class="thr-day">
+                          <span>7</span>
+                          <div class="thr-evt thr-evt--b">Obra teatral</div>
+                        </div>
+                        <div class="thr-day"><span>8</span></div>
+                        <div class="thr-day"><span>9</span></div>
+                        <div class="thr-day">
+                          <span>10</span>
+                          <div class="thr-evt thr-evt--c">Concierto</div>
+                        </div>
+                        <div class="thr-day">
+                          <span>11</span>
+                          <div class="thr-evt thr-evt--c">Concierto</div>
+                        </div>
+                        <div class="thr-day"><span>12</span></div>
+
+                        <div class="thr-day"><span>13</span></div>
+                        <div class="thr-day"><span>14</span></div>
+                        <div class="thr-day thr-day--on">
+                          <span>15</span>
+                          <div class="thr-evt thr-evt--d">Tango para…</div>
+                        </div>
+                        <div class="thr-day"><span>16</span></div>
+                        <div class="thr-day">
+                          <span>17</span>
+                          <div class="thr-evt thr-evt--a">Ferias críti…</div>
+                        </div>
+                        <div class="thr-day"><span>18</span></div>
+                        <div class="thr-day"><span>19</span></div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <!-- Front mockup: Event metrics -->
+                <div class="mock mock--theater-metrics">
+                  <div class="mock__chrome mock__chrome--sm">
+                    <span class="mock__dot mock__dot--r"></span>
+                    <span class="mock__dot mock__dot--y"></span>
+                    <span class="mock__dot mock__dot--g"></span>
+                  </div>
+                  <div class="mock__body mock__body--metrics">
+                    <div class="metric-card">
+                      <div class="metric-card__tag">
+                        Filarmónica de Medellín
+                      </div>
+                      <div class="metric-card__h">
+                        Sala mayor · 15 Oct · 8:00 PM
+                      </div>
+                      <div class="metric-card__stats">
+                        <div class="ms">
+                          <div class="ms__num">87<span>%</span></div>
+                          <div class="ms__lbl">Ocupación</div>
+                        </div>
+                        <div class="ms">
+                          <div class="ms__num">412</div>
+                          <div class="ms__lbl">Boletos</div>
+                        </div>
+                        <div class="ms">
+                          <div class="ms__num">4.8<span>★</span></div>
+                          <div class="ms__lbl">Rating</div>
+                        </div>
+                      </div>
+                      <div class="metric-card__bar">
+                        <div class="metric-card__fill"></div>
+                      </div>
+                      <div class="metric-card__row">
+                        <span>Vendido</span
+                        ><span class="metric-card__val">$8.4M</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study" hidden>
+            <div class="case-study__intro">
+              <h4 data-i18n="theater.caseTitle">Modules that run the venue</h4>
+              <p data-i18n="theater.caseSub">
+                Seven modules that took the theater from spreadsheets to a
+                unified operations platform.
+              </p>
+            </div>
+            <div class="case-grid">
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="4" y="11" width="16" height="10" rx="2" />
+                    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f1t">
+                  Authentication &amp; Authorization
+                </h5>
+                <p data-i18n="theater.f1d">
+                  Role-based access control that scopes every feature — admins,
+                  programmers, ticketing staff, partners — to exactly what they
+                  should see.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="m12 2 3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f2t">Events Manager</h5>
+                <p data-i18n="theater.f2d">
+                  Core module to create, edit and organize theater events plus
+                  their sub-events — every activity tracked from scheduling to
+                  execution.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f3t">Interactive Calendar</h5>
+                <p data-i18n="theater.f3d">
+                  Visual planning that integrates Calendar API to schedule new
+                  events while preventing conflicts with already-booked
+                  activities.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f4t">Legal Documents</h5>
+                <p data-i18n="theater.f4d">
+                  Storage and management for the contracts, permits and
+                  compliance documents an event organization needs to keep
+                  airtight.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="3" y="12" width="4" height="9" />
+                    <rect x="10" y="6" width="4" height="15" />
+                    <rect x="17" y="9" width="4" height="12" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f5t">Performance Metrics</h5>
+                <p data-i18n="theater.f5d">
+                  Tracks attendance, ticket sales and audience satisfaction —
+                  turning event data into a continuous-improvement loop.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <path d="M14 2v6h6M9 17l2-2 2 2 4-4" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f6t">Reports</h5>
+                <p data-i18n="theater.f6d">
+                  A dedicated reports area producing detailed insight for
+                  strategic decisions — performance, logistics, management —
+                  exportable on demand.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="2" y="4" width="20" height="14" rx="2" />
+                    <path d="M2 20h20M8 22h8" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f7t">Responsive Design</h5>
+                <p data-i18n="theater.f7d">
+                  Built so administrators and partners can manage the venue from
+                  any device — desktop in the office, mobile on the move.
+                </p>
+              </div>
+              <div class="case-card">
+                <div class="case-card__icon">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9z" />
+                    <path d="M3 12h18" />
+                  </svg>
+                </div>
+                <h5 data-i18n="theater.f8t">Multi-language</h5>
+                <p data-i18n="theater.f8d">
+                  Ready for international productions with a translation layer
+                  that keeps the platform usable for non-Spanish-speaking
+                  partners and artists.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section
+      class="section services"
+      id="services"
+      data-screen-label="07 Services"
+    >
+      <div class="container">
+        <div class="section__head">
+          <span class="section__eyebrow" data-i18n="services.eyebrow"
+            >Working together</span
+          >
+          <h2 class="section__title" data-i18n="services.title">
+            What I Can Do
+          </h2>
+          <div class="section__underline"></div>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card service-card--a">
+            <div class="service-card__icon">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <h3 data-i18n="services.s1t">Enterprise Angular Apps</h3>
+            <p data-i18n="services.s1d">
+              Production-grade platforms architected from scratch in Angular 20
+              — Signals, NgRx, lazy modules, micro-frontends, audit &amp;
+              permission services. Built to last.
+            </p>
+            <ul class="service-card__list">
+              <li>Angular 20 · TypeScript · RxJS</li>
+              <li>NgRx · Signals · Facades</li>
+              <li>Multi-env CI/CD</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-card--b">
+            <div class="service-card__icon">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                />
+              </svg>
+            </div>
+            <h3 data-i18n="services.s2t">AI-Assisted Development</h3>
+            <p data-i18n="services.s2d">
+              AI tooling integrated with criteria — Claude Skills and MCP
+              servers wired to your repo and design system to speed delivery
+              without compromising engineering quality.
+            </p>
+            <ul class="service-card__list">
+              <li>Custom Claude Skills</li>
+              <li>MCP server setup</li>
+              <li>Prototype-to-code pipelines</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-card--c">
+            <div class="service-card__icon">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path
+                  d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"
+                />
+              </svg>
+            </div>
+            <h3 data-i18n="services.s3t">Design System Engineering</h3>
+            <p data-i18n="services.s3d">
+              Tokens, SCSS architecture, reusable component libraries published
+              to npm. The kind of system that keeps multi-product teams visually
+              consistent.
+            </p>
+            <ul class="service-card__list">
+              <li>Design tokens · SCSS mixins</li>
+              <li>npm component libraries</li>
+              <li>PrimeNG / Bootstrap theming</li>
+            </ul>
+          </article>
+
+          <article class="service-card service-card--d">
+            <div class="service-card__icon">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M20 7 9 18l-5-5" />
+              </svg>
+            </div>
+            <h3 data-i18n="services.s4t">UI / UX Implementation</h3>
+            <p data-i18n="services.s4d">
+              Clean, accessible, fast interfaces — WCAG-aligned, responsive,
+              internationalized. Pixel-faithful to design, robust under real
+              data.
+            </p>
+            <ul class="service-card__list">
+              <li>WCAG accessibility</li>
+              <li>i18n / multi-locale</li>
+              <li>Responsive · mobile-first</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section
+      class="section contact"
+      id="contact"
+      data-screen-label="08 Contact"
+    >
+      <div class="contact__wrap">
+        <div class="container">
+          <div class="section__head section__head--light">
+            <span class="section__eyebrow" data-i18n="contact.eyebrow"
+              >Let's build something</span
+            >
+            <h2 class="section__title" data-i18n="contact.title">Contact</h2>
+            <div class="section__underline"></div>
+          </div>
+
+          <div class="contact__grid">
+            <div class="contact__intro">
+              <h3 data-i18n="contact.h">Drop me a message.</h3>
+              <p data-i18n="contact.p">
+                Let's connect and bring your ideas to life. Open to remote roles
+                with teams in the US and Colombia, freelance projects, and any
+                challenge that pushes the engineering forward.
+              </p>
+
+              <div class="contact-row">
+                <div class="contact-row__icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="5" y="2" width="14" height="20" rx="2" />
+                    <path d="M12 18h.01" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-row__k" data-i18n="contact.phone">
+                    Phone
+                  </div>
+                  <a href="tel:+573026635805" class="contact-row__v"
+                    >(+57) 302 663 5805</a
+                  >
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <div class="contact-row__icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="m3 7 9 6 9-6" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-row__k" data-i18n="contact.email">
+                    Email
+                  </div>
+                  <a
+                    href="mailto:juandavid3196@gmail.com"
+                    class="contact-row__v"
+                    >juandavid3196@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <div class="contact-row__icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-row__k" data-i18n="contact.location">
+                    Location
+                  </div>
+                  <div class="contact-row__v">
+                    Medellín, Colombia
+                    <span class="flag-co" aria-label="Colombia" title="Colombia"
+                      ><i></i><i></i><i></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <div class="contact-row__icon">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="contact-row__k" data-i18n="contact.response">
+                    Response time
+                  </div>
+                  <div class="contact-row__v" data-i18n="contact.responseVal">
+                    Usually within 24h
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="contact__form" id="contactForm">
+              <label class="field">
+                <span class="field__label" data-i18n="contact.form.name"
+                  >Your Name</span
+                >
+                <input
+                  type="text"
+                  name="name"
+                  data-i18n-ph="contact.form.namePh"
+                  placeholder="Jane Doe"
+                  required
+                />
+              </label>
+              <label class="field">
+                <span class="field__label" data-i18n="contact.form.email"
+                  >Your Email</span
+                >
+                <input
+                  type="email"
+                  name="email"
+                  data-i18n-ph="contact.form.emailPh"
+                  placeholder="jane@company.com"
+                  required
+                />
+              </label>
+              <label class="field">
+                <span class="field__label" data-i18n="contact.form.subject"
+                  >Subject</span
+                >
+                <input
+                  type="text"
+                  name="subject"
+                  data-i18n-ph="contact.form.subjectPh"
+                  placeholder="Remote Angular role · AI integration · Freelance"
+                />
+              </label>
+              <label class="field">
+                <span class="field__label" data-i18n="contact.form.message"
+                  >Your Message</span
+                >
+                <textarea
+                  name="message"
+                  rows="5"
+                  data-i18n-ph="contact.form.messagePh"
+                  placeholder="Tell me what you're building…"
+                  required
+                ></textarea>
+              </label>
+              <button type="submit" class="btn btn--primary btn--block">
+                <span data-i18n="contact.form.send">Send Message</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m22 2-7 20-4-9-9-4 20-7Z" />
+                </svg>
+              </button>
+              <div
+                class="form__status"
+                id="formStatus"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="footer__brand">JDRR <span>· Developer</span></div>
+          <div class="footer__rights" data-i18n="footer.rights">
+            © 2026 — Juan David Rios Rodriguez · All rights reserved
+          </div>
+        </div>
+        <div class="footer__socials">
+          <a
+            href="https://wa.me/573026635805"
+            aria-label="WhatsApp"
+            class="social"
+            ><svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1c-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4 0-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.4 1.3 4.9L2 22l5.2-1.4c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.8-3.1-.2-.3A8.3 8.3 0 1112 20.3z"
+              /></svg
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/juan-david-rios-rodriguez-93415b214/"
+            aria-label="LinkedIn"
+            class="social"
+            ><svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.7a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zM19 19h-3v-5.3c0-1.3-.5-2.2-1.6-2.2-1 0-1.4.7-1.6 1.3V19h-3V9h2.9v1.3c.4-.6 1.2-1.5 2.9-1.5 2.1 0 3.4 1.4 3.4 4V19z"
+              /></svg
+          ></a>
+          <a
+            href="mailto:juandavid3196@gmail.com"
+            aria-label="Email"
+            class="social"
+            ><svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" /></svg
+          ></a>
+          <a
+            href="https://github.com/juandavid3196"
+            aria-label="GitHub"
+            class="social"
+            ><svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.5-5.4 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.6 18.4.5 12 .5z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <app-root style="display: none"></app-root>
+  </body>
 </html>
