@@ -163,18 +163,44 @@ revealTargets.forEach(el => io.observe(el));
 // ===================== CONTACT FORM =====================
 const form = document.getElementById('contactForm');
 const status = document.getElementById('formStatus');
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
-  const data = Object.fromEntries(new FormData(form));
-  if (!data.name || !data.email || !data.message) return;
-  status.textContent = '';
-  // Use i18n-aware success message
+  const fd = new FormData(form);
+  if (!fd.get('name') || !fd.get('email') || !fd.get('message')) return;
+
+  const submitBtn = form.querySelector('button[type="submit"]');
   const lang = document.documentElement.getAttribute('data-lang') || 'en';
-  const sent = (window.I18N && window.I18N[lang] && window.I18N[lang]['contact.form.sent'])
-    || '✓ Message sent! I\'ll reply within 24h.';
-  status.textContent = sent;
-  form.reset();
-  setTimeout(() => { status.textContent = ''; }, 5000);
+
+  fd.set('subject', fd.get('subject') || 'Portfolio Contact — New Message');
+  fd.set('from_name', fd.get('name'));
+
+  submitBtn.disabled = true;
+  status.className = 'form__status';
+  status.textContent = lang === 'es' ? 'Enviando…' : 'Sending…';
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: fd
+    });
+    const json = await res.json();
+    if (json.success) {
+      const sent = (window.I18N && window.I18N[lang] && window.I18N[lang]['contact.form.sent'])
+        || '✓ Message sent! I\'ll reply within 24h.';
+      status.textContent = sent;
+      status.className = 'form__status form__status--ok';
+      form.reset();
+    } else {
+      status.textContent = `✗ ${json.message || 'Error desconocido'}`;
+      status.className = 'form__status form__status--err';
+    }
+  } catch (err) {
+    status.textContent = `✗ ${err.message}`;
+    status.className = 'form__status form__status--err';
+  } finally {
+    submitBtn.disabled = false;
+    setTimeout(() => { status.textContent = ''; status.className = 'form__status'; }, 8000);
+  }
 });
 
 
