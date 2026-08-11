@@ -69,7 +69,7 @@ const cvLink = document.getElementById('cvDownloadLink');
 function setCvForLang(lang) {
   if (!cvLink) return;
   const fileName = lang === 'es'
-    ? 'Juan_David_Rios_Rodriguez_CV.pdf'
+    ? 'Juan_David_Rios_Rodriguez_CV_ES.pdf'
     : 'Juan_David_Rios_Rodriguez_Resume.pdf';
   const currentHref = cvLink.getAttribute('href');
   const dir = currentHref.slice(0, currentHref.lastIndexOf('/') + 1);
