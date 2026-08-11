@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <base href="/" />
-    <title>Juan David Rios Rodriguez — Front-End Engineer</title>
+    <title>Juan David Rios Rodriguez — Full-Stack Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./portfolio.css" />
@@ -136,16 +136,17 @@
           <div class="hero__role-wrap">
             <div class="hero__role-bar">
               <span class="hero__role-text" data-i18n="hero.role"
-                >Front-End Engineer · Angular Specialist · AI-Integrated
-                Development</span
+                >Full-Stack Engineer · Angular &amp; .NET Specialist ·
+                AI-Integrated Development</span
               >
               <span class="hero__role-glyph">&lt;/&gt;</span>
             </div>
           </div>
 
           <p class="hero__tag" data-i18n="hero.tag">
-            I design scalable enterprise platforms with <b>Angular 20</b>,
-            <b>React</b> and <b>TypeScript</b>. Strategic AI integrated to
+            I design scalable enterprise platforms end-to-end with
+            <b>Angular 20</b> on the front and <b>.NET Core</b> on the back —
+            Clean Architecture, DDD, CQRS. Strategic AI integrated to
             guarantee technical quality on every release.
           </p>
 
@@ -335,15 +336,18 @@
             <p class="about__lede">
               <span class="about__hello" data-i18n="about.hello">Hello,</span>
               <span data-i18n="about.lede"
-                >I'm a self-driven Front-End Engineer who started coding alone —
-                and that curiosity still drives how I work today.</span
+                >I'm a Full-Stack Engineer who architects platforms end to
+                end — from the front-end experience to the back-end systems
+                that power it.</span
               >
             </p>
             <p data-i18n="about.p1">
-              I specialize in <b>Angular 20</b> and <b>TypeScript</b>,
-              architecting enterprise-scale platforms from scratch. AI tooling —
-              Claude Skills, MCP — is part of the toolbelt, but the
-              architecture, the decisions and the ownership are mine.
+              I specialize in <b>Angular 20</b> on the front-end and
+              <b>.NET Core</b> on the back-end — Clean Architecture, DDD,
+              CQRS, Entity Framework, SQL Server — architecting
+              enterprise-scale platforms end to end. AI tooling — Claude
+              Skills, MCP — is part of the toolbelt, but the architecture, the
+              decisions and the ownership are mine.
             </p>
             <p data-i18n="about.p2">
               I care about the full picture: the architecture that makes a
@@ -382,8 +386,9 @@
 
             <div class="about__cta">
               <a
+                id="cvDownloadLink"
                 href="assets/Juan_David_Rios_Rodriguez_Resume.pdf"
-                download
+                download="Juan_David_Rios_Rodriguez_Resume.pdf"
                 class="btn btn--primary"
               >
                 <svg
@@ -413,7 +418,9 @@
             </div>
             <div class="info-row">
               <span class="info-row__k" data-i18n="about.info.role">Role</span
-              ><span class="info-row__v">Front-End Engineer</span>
+              ><span class="info-row__v" data-i18n="about.info.roleValue"
+                >Full-Stack Engineer</span
+              >
             </div>
             <div class="info-row">
               <span class="info-row__k" data-i18n="about.info.email">Email</span
@@ -736,22 +743,22 @@
                   2025 — Now
                 </div>
                 <div class="timeline__title" data-i18n="resume.exp1.title">
-                  Front-End Engineer
+                  Full-Stack Engineer (Angular &amp; .NET)
                 </div>
                 <div class="timeline__org" data-i18n="resume.exp1.org">
                   Logit — Magnum Logistics S.A.S
                 </div>
                 <p data-i18n="resume.exp1.desc">
-                  Architected a full foreign-trade platform from scratch. Live
-                  in production, used daily by real clients with strong positive
-                  feedback. Co-developed the team's design system published as
-                  an npm library. Mentored juniors and ran technical onboarding.
+                  Architected a full foreign-trade platform from scratch —
+                  Angular 20 front-end, .NET Core microservices on the back.
+                  Live in production, used daily by real clients. Co-developed
+                  the team's design system published as an npm library.
+                  Mentored juniors and ran technical onboarding.
                 </p>
                 <div class="timeline__tags">
-                  <span>Angular 20</span><span>TypeScript</span
-                  ><span>Signals</span><span>RxJS</span
-                  ><span>Claude Skills</span><span>MCP</span
-                  ><span>Design System</span>
+                  <span>Angular 20</span><span>.NET Core</span><span>DDD</span
+                  ><span>CQRS</span><span>SQL Server</span
+                  ><span>Claude Skills</span><span>Design System</span>
                 </div>
               </div>
 
@@ -1195,6 +1202,23 @@
 
           <div class="skill-card">
             <div class="skill-card__head">
+              <div class="skill-card__icon skill-card__icon--dotnet">C#</div>
+              <h3>.NET &amp; Backend</h3>
+              <span class="skill-card__level">Advanced</span>
+            </div>
+            <div class="skill-card__rule"></div>
+            <ul>
+              <li>.NET Core · C#</li>
+              <li>Clean Architecture · DDD · CQRS</li>
+              <li>MediatR · Entity Framework Core</li>
+              <li>SQL Server · relational modeling</li>
+              <li>Microservices &amp; unit testing</li>
+              <li>Auth &amp; role-based services</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card__head">
               <div class="skill-card__icon skill-card__icon--ai">AI</div>
               <h3>AI Development</h3>
               <span class="skill-card__level">Daily</span>
@@ -1313,28 +1337,31 @@
                 Logit — Foreign Trade Platform
               </h3>
               <p class="project__desc" data-i18n="logit.desc">
-                End-to-end Angular 20 platform for imports, exports, purchase
-                orders, product catalog and client management. I led front-end
-                architecture from scratch — UI logic, component design, system
-                structure — translating complex foreign-trade requirements into
-                scalable, high-performance interfaces. Live in production, used
-                daily by real clients.
+                End-to-end foreign trade platform for imports, exports,
+                purchase orders, product catalog and client management. I led
+                the Angular 20 front-end architecture from scratch — UI
+                logic, component design, system structure — and contributed
+                to the .NET Core microservices backend (Clean Architecture,
+                DDD, CQRS) for auth, roles and CRUD operations. Live in
+                production, used daily by real clients.
               </p>
               <div class="project__highlights">
                 <div>
                   <b data-i18n="logit.h1k">Role</b
-                  ><span data-i18n="logit.h1v">Lead Front-End Engineer</span>
+                  ><span data-i18n="logit.h1v"
+                    >Full-Stack Engineer (Angular &amp; .NET)</span
+                  >
                 </div>
                 <div>
                   <b data-i18n="logit.h2k">Stack</b
                   ><span data-i18n="logit.h2v"
-                    >Angular 20 · TS · RxJS · SCSS · PrimeNG</span
+                    >Angular 20 · .NET Core · C# · EF Core</span
                   >
                 </div>
                 <div>
                   <b data-i18n="logit.h3k">Architecture</b
                   ><span data-i18n="logit.h3v"
-                    >Standalone · Signals · Resolvers · Interceptors</span
+                    >Clean Architecture · DDD · CQRS</span
                   >
                 </div>
                 <div>
@@ -1660,11 +1687,11 @@
                     <path d="M7 8l-4 4 4 4M17 8l4 4-4 4M14 4l-4 16" />
                   </svg>
                 </div>
-                <h5 data-i18n="logit.f6t">RESTful Integration</h5>
+                <h5 data-i18n="logit.f6t">.NET Microservices</h5>
                 <p data-i18n="logit.f6d">
-                  Continuous collaboration with backend to integrate RESTful
-                  APIs and microservice endpoints — stable communication, data
-                  consistency, optimized performance.
+                  Contributed to backend microservices in .NET Core — Clean
+                  Architecture, DDD and CQRS for auth, roles and CRUD with
+                  custom business validations and Entity Framework.
                 </p>
               </div>
 
@@ -2494,14 +2521,14 @@
                 <path d="M8 21h8M12 17v4" />
               </svg>
             </div>
-            <h3 data-i18n="services.s1t">Enterprise Angular Apps</h3>
+            <h3 data-i18n="services.s1t">Full-Stack Engineering</h3>
             <p data-i18n="services.s1d">
-              Production-grade platforms architected from scratch in Angular 20
-              — Signals, NgRx, lazy modules, micro-frontends, audit &amp;
-              permission services. Built to last.
+              Production-grade platforms architected end to end — Angular 20
+              on the front, .NET Core microservices (Clean Architecture, DDD,
+              CQRS) on the back. Built to last.
             </p>
             <ul class="service-card__list">
-              <li>Angular 20 · TypeScript · RxJS</li>
+              <li>Angular 20 · .NET Core · SQL Server</li>
               <li>NgRx · Signals · Facades</li>
               <li>Multi-env CI/CD</li>
             </ul>

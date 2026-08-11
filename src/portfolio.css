@@ -1508,6 +1508,11 @@ button {
   color: #fff;
   font-size: 22px;
 }
+.skill-card__icon--dotnet {
+  background: linear-gradient(135deg, #8d5cf6, #512bd4);
+  color: #fff;
+  font-size: 15px;
+}
 .skill-card__icon--ai {
   background: linear-gradient(135deg, #5db5ff, #1976d2);
   color: #fff;

@@ -1,4 +1,4 @@
-// ===================== PROFILE CARD 3D TILT =====================
+﻿// ===================== PROFILE CARD 3D TILT =====================
 (() => {
   const card = document.querySelector('.profile-card');
   if (!card) return;
@@ -57,7 +57,24 @@ function applyLang(lang) {
     const val = lang === 'en' ? i18nPhDefaults.get(key) : (dict[key] ?? i18nPhDefaults.get(key));
     if (val != null) n.setAttribute('placeholder', val);
   });
+  setCvForLang(lang);
   localStorage.setItem('jdrr-lang', lang);
+}
+
+// ===================== CV DOWNLOAD (locale-aware) =====================
+// Spanish visitors get the Spanish CV, everyone else gets the English resume.
+// The filename swap keeps whatever folder prefix is already in the href
+// (e.g. "assets/") so this works the same in src/ and the docs/ static export.
+const cvLink = document.getElementById('cvDownloadLink');
+function setCvForLang(lang) {
+  if (!cvLink) return;
+  const fileName = lang === 'es'
+    ? 'Juan_David_Rios_Rodriguez_CV.pdf'
+    : 'Juan_David_Rios_Rodriguez_Resume.pdf';
+  const currentHref = cvLink.getAttribute('href');
+  const dir = currentHref.slice(0, currentHref.lastIndexOf('/') + 1);
+  cvLink.setAttribute('href', dir + fileName);
+  cvLink.setAttribute('download', fileName);
 }
 
 langToggle.addEventListener('click', e => {
@@ -202,3 +219,5 @@ form.addEventListener('submit', async e => {
     setTimeout(() => { status.textContent = ''; status.className = 'form__status'; }, 8000);
   }
 });
+
+
